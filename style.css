@@ -9,7 +9,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* vh: web tarayıcısına göre boyutlanır*/
+    min-height: 100vh; 
     background: #8d8b8b;   
 }
 
@@ -21,37 +21,36 @@ body{
 }
 
 .wrapper header {
-    color: #8d8b8b;
+    color: #3b3a3a;
     font-size: 21px;
     font-weight: 500;
     padding: 16px 15px;
     display: flex;
-    align-items: center; /* üstten alttan ortaladık */ 
-    /* justify-content: center; */
-    border-bottom: 1px solid #bfbfbf; /* Çizgi çizdik */
+    align-items: center;
+    border-bottom: 1px solid #bfbfbf;
 }
 
-header i{ /*arrow icon*/
+header i{ 
 cursor: pointer;
-font-size: 0em; /*em parent'a göre boyut alır. Burada class active olunca görnmeyecek 0 em olduğu için.*/
+font-size: 0em;
 margin-right: 8px;
 }
 
-.wrapper.active header i{ /* arrow icon class active olunca görünmesi için*/
+.wrapper.active header i{ 
     font-size: 30px;
     margin-left: 5px;
 }
 
-.wrapper .input-part { /*input alanı*/
-    margin: 20px 25px 30px; /*top left bottom*/
+.wrapper .input-part { 
+    margin: 20px 25px 30px;
 }
 
-.wrapper.active .input-part{ /*hava durumu görünürken input alanını gizle*/
+.wrapper.active .input-part{ 
 display: none;
 }
 
-.input-part .info-txt { /*Please enter ... alanımız için*/
-    display: none; /*aşağıdaki durumlara göre (error, pending, valid)  JS ile görünecek o yüzden none yaptık. */
+.input-part .info-txt { 
+    display: none; 
     font-size: 17px;
     text-align: center;
     padding: 12px 10px;
@@ -59,21 +58,21 @@ display: none;
     margin-bottom: 15px;
 }
 
-.info-txt.error{ /* giriş yapılmadığında verilecek uyarı için*/
+.info-txt.error{ 
     display: block;
     color: #721c24;
     background: #f8d7da ;
     border: 1px solid #f5c6cb;
 }
 
-.info-txt.pending{ /* giriş doğru olduğunda */
+.info-txt.pending{ 
     display: block;
     color: #0c5460;
     background: #d1ecf1;
     border: 1px solid #bee5eb;
 }
 
-.input-part :where(input,button) { /*input ve button için özellikleri uygula*/
+.input-part :where(input,button) { 
 width: 100%;
 height: 55px;
 border: none;
@@ -82,20 +81,19 @@ font-size: 18px;
 border-radius: 7px;
 }
 
-.input-part input {  /*city girilecek alan*/
+.input-part input { 
     width: 75% !important;
     text-align: center;
     border: 1px solid #bfbfbf;
 }
 
 
-.input-part input:is(:focus, :valid ){ /* is class seçicisini de yok sayar, burada ne verildiyse onu uygular*/
-    /*":valid" doğru alanları vurgulamak için kullanılır*/
+.input-part input:is(:focus, :valid ){ 
     border: 1px solid #8d8b8b;
 }
 
 .input-part input::placeholder{
-    color:#bfbfbf;
+    color:#b1b1b1;
 }
 
 .searchArea{
@@ -120,19 +118,18 @@ align-items: center;
 text-align: center; 
 padding-top: 14px;
 margin-left: 8px;
-transition: 0.3s ease; /*:hover efekti için*/
+transition: 0.3s ease;
 }
 
 .searchIcon:hover {
     background: #6b6a6a;
 }
 
-.input-part .separator { /*input ile button ayırıcı*/
+.input-part .separator {
    height: 1px;
    width: 100%;
    margin: 25px 0;
    background-color: #ccc; 
-   /*"or" yazısını ortaya hizalamak için aşağıdaki 3 flexbox kodu yazdık*/
    display: flex;
    align-items: center;
    justify-content: center;
@@ -140,7 +137,7 @@ transition: 0.3s ease; /*:hover efekti için*/
 .separator::before{
     content: "or";
     color: #ccc;
-    padding: 0 15px; /* sağdan soldan boşluk ile tam ortada "--  or  --" yazımız oldu*/
+    padding: 0 15px; 
     font-size: 19px;
     background-color: #fff;
 }
@@ -149,7 +146,7 @@ transition: 0.3s ease; /*:hover efekti için*/
     color: #fff;
     cursor: pointer;
     background-color:#8d8b8b;
-    transition: 0.3s ease; /*:hover efekti için*/
+    transition: 0.3s ease;
 }
 
 .input-part button:hover{
@@ -157,14 +154,14 @@ transition: 0.3s ease; /*:hover efekti için*/
 }
 
 
-.wrapper .weather-part{ /*weather bilgileri olan kısım*/
+.wrapper .weather-part{
     display:none;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.wrapper.active .weather-part{ /* hava durumu görününce olması istenen*/
+.wrapper.active .weather-part{
     display: flex;
 }
 
@@ -172,22 +169,22 @@ transition: 0.3s ease; /*:hover efekti için*/
        width: 170px;
 } 
 
-.weather-part .temp { /*deg ve numb olan kısım*/
+.weather-part .temp {
     display: flex;
     font-size: 70px;
 }
 
-.weather-part .temp .numb { /* sıcaklık değeri*/
+.weather-part .temp .numb {
 font-weight: 100;
 }
 
-.weather-part .temp .deg { /*deg simgesi*/
+.weather-part .temp .deg {
     font-size: 40px;
     margin: 10px 5px 0 0 ;
     display: block;
 }
 
-.weather-part .weather{ /*hava durumu bilgisi (clouds,rainy...)*/
+.weather-part .weather{
     font-size: 17px;
     text-align: center;
     margin: -5px 20px 15px;
@@ -284,5 +281,10 @@ body {
 };
 
 
-
+footer{
+    text-align: center;
+    color:#7e7575;
+    margin-top: 25px;
+    font-size: small;
+ }
 
